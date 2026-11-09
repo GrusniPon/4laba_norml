@@ -1,0 +1,65 @@
+﻿<Window x:Class="_4laba_norml.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_4laba_norml"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="D:\WF\4laba_norml\backgraund_for_laba.png" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Lucida Console"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="MaxLength" Value="3"/>
+        </Style>
+
+        <Style x:Key="txtBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Times New Roman"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="200"/>
+            
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <TextBlock x:Name="txtBlockName" Text="Введите имя Студента и его группу"/>
+                <TextBox Style="{StaticResource txtBox}" x:Name="txtName" />
+                <TextBox Style="{StaticResource txtBox}" x:Name="txtGroup" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Оценка по технологии программирования:"/>
+                <TextBox x:Name="txtTech" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Оценка по операционным системам:"/>
+                <TextBox x:Name="txtOS" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Оценка по интернет технологиям:"/>
+                <TextBox x:Name="txtInternet" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Оценка по ML технологиям:"/>
+                <TextBox x:Name="txtML" />
+            </StackPanel>
+            <Button x:Name="btnCalculate" Content="Рассчитать средний балл" Margin="10"
+                    Width="200" Height="30" FontFamily="Times New Roman" Click="btnCalculate_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
